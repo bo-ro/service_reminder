@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Dziękujemy za skorzystanie z naszych usług <%= @car.client_first_name %></h1>
+    <p>
+    W dniu dzisiejszym twoje auto przeszło przegląd techniczny. Jego ważność wygasa <%= @car.last_serviced_at + 1.year %>.
+    </p>
+
+    <p>
+
+      Poinforumujemy Cię na miesiąc przed końcem ważności przeglądu twojego auta: <%= @car.name %> o numerze rejestracyjnym: <% @car.plate_number %>.<br>
+
+
+    </p>
+    <p>
+      Kontakt:<%= @url %>.
+    </p>
+    <p>Dziękujemy za skorzystanie z naszych usług!</p>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Klient</strong>
+  <%= @car.client_first_name %> <%= @car.client_last_name %>
+</p>
+
+<p>
+  <strong>Email</strong>
+  <%= @car.email || "-" %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @car.name %>
+</p>
+
+<p>
+  <strong>Numer rejsetracyjny:</strong>
+  <%= @car.plate_number %>
+</p>
+
+<p>
+  <strong>Numer telefonu:</strong>
+  <%= @car.telephone_number %>
+</p>
+
+<p>
+  <strong>Data ostatniego przeglądu:</strong>
+  <%= @car.last_serviced_at %>
+</p>
+
+
+
+
+<%= link_to 'Edytuj', edit_car_path(@car) %> |
+<%= link_to 'Anuluj', cars_path %>
