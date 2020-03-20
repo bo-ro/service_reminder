@@ -117,7 +117,7 @@ Rails.application.configure do
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
     domain: 'niewinski.net',
-    address: 'mail.niewisnki.net',
+    address: 'mail.niewinski.net',
     port: 25,
     authentication: :plain,
     enable_starttls_auto: true

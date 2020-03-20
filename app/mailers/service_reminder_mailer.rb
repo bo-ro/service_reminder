@@ -1,5 +1,5 @@
 class ServiceReminderMailer < ApplicationMailer
-  default from: 'notifications@sandboxc85263fd6b934cb39c7dcf66e36eabb4.mailgun.org'
+  default from: 'noreply@carservicereminder.com'
 
   def welcome_email(car)
     @car = car
