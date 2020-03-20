@@ -116,9 +116,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
-    domain: 'carservicereminder.com',
-    address: 'smtp.sendgrid.net',
-    port: 587,
+    domain: 'niewinski.net',
+    address: 'mail.niewisnki.net',
+    port: 25,
     authentication: :plain,
     enable_starttls_auto: true
   }
