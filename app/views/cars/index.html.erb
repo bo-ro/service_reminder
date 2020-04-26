@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+  <%= form_tag sessions_path, class: '' do %>
+    <%= text_field_tag(:email, nil, placeholder: 'type your login here', class: '') %>
+    <%= password_field_tag(:password, nil, placeholder: 'type your password here', class: '') %>
+    <%= submit_tag("Login", class: '') %>
+  <% end %>
+
 <h1>Klienci</h1>
 
 <table class="table">
@@ -36,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Car', new_car_path %>
+<%= link_to 'Dodaj auto', new_car_path %>
