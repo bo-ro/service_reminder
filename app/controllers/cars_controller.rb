@@ -1,4 +1,4 @@
-class CarsController < ApplicationController
+class CarsController < AuthenticatedController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
   # GET /cars
   # GET /cars.json

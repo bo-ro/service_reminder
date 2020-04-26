@@ -1,5 +1,7 @@
 <nav class="navbar navbar-dark bg-primary">
   <a class="navbar-brand">Serwis samochodowy</a>
   <%= link_to "Create a new user", new_user_path %>
-  <%= link_to 'Logout', logout_path, remote: true, class: 'btn btn-outline-light my-2 my-sm-0' %>
+  <% if current_user %>
+  <%= link_to 'Logout', sessions_path, method: :delete, remote: true, class: 'btn btn-outline-light my-2 my-sm-0' %>
+  <% end %>
 </nav>

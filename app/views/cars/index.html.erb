@@ -1,45 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-  <%= form_tag sessions_path, class: '' do %>
-    <%= text_field_tag(:email, nil, placeholder: 'type your login here', class: '') %>
-    <%= password_field_tag(:password, nil, placeholder: 'type your password here', class: '') %>
-    <%= submit_tag("Login", class: '') %>
-  <% end %>
 
-<h1>Klienci</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Klient</th>
-      <th>Adres Email</th>
-      <th>Model</th>
-      <th>Numer rejestracyjny</th>
-      <th>Numer telefonu</th>
-      <th>Data ostatniego przeglądu</th>
 
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h1>Klienci</h1>
 
-  <tbody>
-    <% @cars.each do |car| %>
-      <tr>
-        <td><%= car.client_first_name + " " + car.client_last_name %></td>
-        <td><%= car.email %></td>
-        <td><%= car.name %></td>
-        <td><%= car.plate_number %></td>
-        <td><%= car.telephone_number %></td>
-        <td><%= car.last_serviced_at %></td>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Klient</th>
+          <th>Adres Email</th>
+          <th>Model</th>
+          <th>Numer rejestracyjny</th>
+          <th>Numer telefonu</th>
+          <th>Data ostatniego przeglądu</th>
 
-        <td><%= link_to 'Wyświetl', car %></td>
-        <td><%= link_to 'Edytuj', edit_car_path(car) %></td>
-        <td><%= link_to 'Usuń', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<br>
+      <tbody>
+        <% @cars.each do |car| %>
+          <tr>
+            <td><%= car.client_first_name + " " + car.client_last_name %></td>
+            <td><%= car.email %></td>
+            <td><%= car.name %></td>
+            <td><%= car.plate_number %></td>
+            <td><%= car.telephone_number %></td>
+            <td><%= car.last_serviced_at %></td>
+
+            <td><%= link_to 'Wyświetl', car %></td>
+            <td><%= link_to 'Edytuj', edit_car_path(car) %></td>
+            <td><%= link_to 'Usuń', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
 
 <%= link_to 'Dodaj auto', new_car_path %>
