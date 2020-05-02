@@ -1,0 +1,42 @@
+<%= form_with(model: car, local: true) do |form| %>
+  <%= form.where(params[:search]) do |specific_form|%>
+    <div class="field">
+      <%= specific_form.label :client_first_name, "Imię"%>
+      <%= specific_form.text_field :client_first_name %>
+    </div>
+
+    <div class="field">
+      <%= specific_form.label :client_last_name, "Nazwisko"%>
+      <%= specific_form.text_field :client_last_name %>
+    </div>
+
+    <div class="field">
+      <%= specific_form.label :email, "Email"%>
+      <%= specific_form.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= specific_form.label :name, "Model" %>
+      <%= specific_form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= specific_form.label :plate_number, "Numer rejestracyjny:"%>
+      <%= specific_form.text_field :plate_number %>
+    </div>
+
+    <div class="field">
+      <%= specific_form.label :telephone_number, "Numer telefonu"%>
+      <%= specific_form.text_field :telephone_number %>
+    </div>
+
+    <div class="field">
+      <%= specific_form.label :last_serviced_at, "Data ostatniego przeglądu"%>
+      <%= specific_form.date_select :last_serviced_at %>
+    </div>
+
+    <div class="actions">
+      <%= specific_form.submit %>
+    </div>
+  <% end %>
+<% end %>

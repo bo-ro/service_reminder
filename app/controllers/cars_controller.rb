@@ -3,7 +3,7 @@ class CarsController < AuthenticatedController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.all.search(params[:search])
   end
 
   # GET /cars/1

@@ -2,6 +2,15 @@
 
 
 
+<%= form_tag cars_path, method: 'get' do %>
+     <p>
+        <%= text_field_tag :search, params[:search]%>
+        <%= submit_tag "Search", :name => nil %>
+     </p>
+<%end%>
+
+
+</form>
 
     <h1>Klienci</h1>
 
@@ -22,7 +31,8 @@
       <tbody>
         <% @cars.each do |car| %>
           <tr>
-            <td><%= car.client_first_name + " " + car.client_last_name %></td>
+            <td><%= link_to car.client_name, cars_path(search: car.client_name) %>
+           </td>
             <td><%= car.email %></td>
             <td><%= car.name %></td>
             <td><%= car.plate_number %></td>
@@ -37,5 +47,6 @@
       </tbody>
     </table>
     <br>
+</form>
 
 <%= link_to 'Dodaj auto', new_car_path %>

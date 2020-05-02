@@ -19,6 +19,7 @@
 #  index_cars_on_plate_number      (plate_number)
 #
 class Car < ApplicationRecord
+  before_validation {self.email = email.downcase; self.plate_number = plate_number.upcase}
   validates :client_first_name,
   :client_last_name,
   :name,
@@ -26,4 +27,25 @@ class Car < ApplicationRecord
   presence: true
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, if: -> (car) { car.email.present? } }
+  validates :plate_number, uniqueness: true
+
+  def self.search(search)
+    if search
+      where('plate_number ILIKE ?', "%#{search}%").or(
+        where('(client_first_name || \' \' || client_last_name) ILIKE ?', "%#{search}%")
+      ).or(
+        where('email ILIKE ?', "%#{search}%")
+      ).or(
+        where('telephone_number ILIKE ?', "%#{search}%")
+      ).or(
+        where('name ILIKE ?', "%#{search}%")
+      )
+    else
+      all
+    end
+  end
+
+  def client_name
+    client_first_name + " " + client_last_name
+  end
 end
