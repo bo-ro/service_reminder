@@ -155,6 +155,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    smsapi-client (1.0.2)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -187,7 +188,7 @@ GEM
       railties (>= 4.2)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     zeitwerk (2.3.0)
 
 PLATFORMS
@@ -206,6 +207,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   sass-rails (>= 6)
+  smsapi-client (~> 1.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   telesign
