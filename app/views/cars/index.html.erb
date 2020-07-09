@@ -39,6 +39,7 @@
             <td><%= car.telephone_number %></td>
             <td><%= car.last_serviced_at %></td>
 
+            <td><%= link_to 'Powiadom', new_message_path %></td>
             <td><%= link_to 'Wyświetl', car %></td>
             <td><%= link_to 'Edytuj', edit_car_path(car) %></td>
             <td><%= link_to 'Usuń', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
